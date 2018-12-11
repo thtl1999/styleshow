@@ -1,0 +1,21 @@
+<script>
+function change(num){
+	var x=document.form;
+	var y=Number(count.value)+num;
+	if(y<1)y=1;
+	x.count.value=y;
+}
+</script>
+
+<form name="joinForm">
+<table>
+<tr>
+<td>개수</td>
+</tr>
+
+<tr> <td> <input type='text'name='count'value='1'></td>
+<td> <a href='#' onclick="change(1);">like</a>
+<a href='#' onclick='change(-1);'>dislike</a></td>
+</tr>
+</table>
+</form>

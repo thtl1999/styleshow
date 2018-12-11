@@ -1,0 +1,26 @@
+<!--login.ejs-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src="//code.jquery.com/jquery-1.11.1.js"></script>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<h1 id="name" >"default string"</h1>
+<form action="http://skkusgg.ga:8081/sqltest.html" method="post">
+    <label>id :</label><input type="text" name="param1"><br>
+    <label>pw :</label><input type="text" name="param2"><br>
+    <button>Save</button>
+</form>
+
+<script>
+var nowhttp = window.location.href;				//http://skkusgg.ga:8082/firsttest/155
+var usercodetemp = nowhttp.split('/');	//
+usercode = usercodetemp[4];				//155
+var getid = 'My name is ' + usercode;
+$('#name').text(getid);
+</script>
+
+</body>
+</html>

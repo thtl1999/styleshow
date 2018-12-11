@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+	<!DOCTYPE html>
+<html>
+<head>
+	
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>StyleShow | Upload</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  StyleShow | My Profile Modify
+  <![endif]-->
+  <link rel="shortcut icon" href="blue.ico">
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+	<link href="https://vjs.zencdn.net/5.19/video-js.css" rel="stylesheet">
+	
+	<script src="https://vjs.zencdn.net/5.19/video.js"></script>
+	<script src="/socket.io/socket.io.js"></script> <!-- 1 -->
+	<script src="//code.jquery.com/jquery-1.11.1.js"></script>
+
+<link href="kartikfileinput/css/fileinput.min.css" rel="stylesheet">
+<style>
+	.item_label{
+		font-size: large;
+		font-size: 20px;
+		font-weight: bold;
+		text-shadow: 2px 2px 4px #CCCCCC;}
+</style>
+</head>
+
+
+<body class="hold-transition skin-blue sidebar-mini" style="overflow-x: hidden">
+    <div class="wrapper">
+        <header class="main-header">
+            <!-- Logo -->
+
+            <a href="/" class="logo" style="position:fixed;">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><b>S</b></span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg"><b>Style</b>SHOW</span>
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+
+            <nav class="navbar navbar-fixed-top">
+
+
+                <div class="col-md-offset-3">
+                    <form action="#" method="get" class="sidebar-form navbar-left" style="min-width: 200px;max-width: 500px; margin-top: 4px;padding: 0px; margin-left: 15px;">
+                        <div class="input-group">
+                            <input type="text" name="q" class="form-control" placeholder="Search...">
+                            <span class="input-group-btn">
+                                <button type="submit" name="search" id="search-btn" class="btn btn-flat">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+
+
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+
+                        <ul class="dropdown-menu">
+                            <li class="header">You have 4 messages</li>
+                            <li>
+                                <!-- inner menu: contains the actual data -->
+                                <ul class="menu">
+                                    <li>
+                                        <!-- start message -->
+                                        <a href="#">
+                                            <div class="pull-left">
+                                                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                            </div>
+                                            <h4>
+                                                Support Team
+                                                <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                                            </h4>
+                                            <p>Why not buy a new awesome theme?</p>
+                                        </a>
+                                    </li>
+                                    <!-- end message -->
+                                    <li>
+                                        <a href="#">
+                                            <div class="pull-left">
+                                                <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                                            </div>
+                                            <h4v>
+                                                AdminLTE Design Team
+                                                <small><i class="fa fa-clock-o"></i> 2 hours</small>
+                                            </h4v>
+                                            <p>Why not buy a new awesome theme?</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="pull-left">
+                                                <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                                            </div>
+                                            <h4>
+                                                Developers
+                                                <small><i class="fa fa-clock-o"></i> Today</small>
+                                            </h4>
+                                            <p>Why not buy a new awesome theme?</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="pull-left">
+                                                <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                                            </div>
+                                            <h4>
+                                                Sales Department
+                                                <small><i class="fa fa-clock-o"></i> Yesterday</small>
+                                            </h4>
+                                            <p>Why not buy a new awesome theme?</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="pull-left">
+                                                <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                                            </div>
+                                            <h4>
+                                                Reviewers
+                                                <small><i class="fa fa-clock-o"></i> 2 days</small>
+                                            </h4>
+                                            <p>Why not buy a new awesome theme?</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="footer"><a href="#">See All Messages</a></li>
+                        </ul>
+                        
+                        <!-- Notifications: style can be found in dropdown.less -->
+
+
+                        <ul class="dropdown-menu">
+                            <li class="header">You have 10 notifications</li>
+                            <li>
+                                <!-- inner menu: contains the actual data -->
+                                <ul class="menu">
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the
+                                            page and may cause design problems
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-users text-red"></i> 5 new members joined
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-shopping-cart text-green"></i> 25 sales made
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-user text-red"></i> You changed your username
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="footer"><a href="#">View all</a></li>
+                        </ul>
+                        
+                        <!-- Tasks: style can be found in dropdown.less -->
+
+
+                        <li class="dropdown user user-menu">
+                            <a id="username" name="username" href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                                <span class="hidden-xs"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- User image -->
+                                <li class="user-header">
+                                    <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                    <p>
+                                        <span id="realusername"></span>
+                                        <small id="smallusername"></small>
+                                    </p>
+                                </li>
+                                <!-- Menu Body -->
+                                <li class="user-body">
+                                    <div class="row">
+                                        <div class="col-sm-5 text-center"><a href="/upload">업로드</a></div>
+                                        <div class="col-sm-2 text-center"></div>
+                                        <div class="col-sm-5 text-center"><a href="/profilemodify">프로필 편집</a></div>
+                                    </div>
+                                    <!-- /.row -->
+                                </li>
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a id="profile" href="#" class="btn btn-default btn-flat">내 프로필</a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a id="SignOut" class="btn btn-default btn-flat SignOut" type="button">로그아웃</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Control Sidebar Toggle Button -->
+
+</ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar" style="position:fixed;">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                <!-- Sidebar user panel -->
+                <!-- search form -->
+                <!-- /.search form -->
+                <!-- sidebar menu: : style can be found in sidebar.less -->
+                <ul id="libr" class="sidebar-menu" data-widget="tree">
+                    <li class="header">라이브러리</li>
+
+
+                </ul>
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    General Form Elements
+                    <small>Preview</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                    <li><a href="#">Forms</a></li>
+                    <li class="active">General Elements</li>
+                </ol>
+            </section>
+            <!-- Main content -->
+            <section class="content">
+                <div class="row" >
+                	
+<div class="col-xs-11 col-sm-11 col-lg-8 col-md-11 col-lg-offset-1 col-md-offset-1" style="padding: 20px;">
+
+
+
+<form role="form" action="http://skkusgg.ga:8081/uploadcontent" enctype="multipart/form-data" method="post">
+  <div class="form-group" style="margin-bottom: 50px;">
+    <label for="name" class="item_label">제목</label>
+    <input name="contenttitle" type="text" class="form-control" id="name" placeholder="제목" required>
+  </div>
+  <div class="form-group" style="margin-bottom: 50px;" >
+    <input id="input-1" name="inputs" type="file" class="form-control" data-browse-on-zone-click="true" >
+  </div>
+  
+  <div class="form-group" style="margin-bottom: 50px;">
+    <label for="name" class="item_label">content</label>
+    <textarea name="content" class="form-control" rows="5" style="resize:none;" required></textarea>
+  </div>
+  
+  <div class="form-group" style="margin-bottom: 50px;">
+    <label for="name" class="item_label">product info</label>
+    <textarea name="productinfo" class="form-control" rows="5" style="resize:none;" required></textarea>
+  </div>
+   
+  
+  <button type="submit" class="btn btn-primary" style="font-size:large;margin-bottom: 100px;"> Submit </button>
+</form>
+
+
+</div>	
+
+
+	
+                </div>
+            </section>
+            <!-- /.content -->
+        </div>
+    
+   
+   
+   
+
+        
+    </div>
+
+    <script src="kartikfileinput/jquery331.js"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="bower_components/fastclick/lib/fastclick.js"></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="dist/js/demo.js"></script>
+    <script src="laydate/laydate.js"></script>
+    
+   <script src="kartikfileinput/js/fileinput.min.js"></script>
+   <script src="kartikfileinput/js/fileinput.js"></script>
+   <script src="kartikfileinput/js/kr.js"></script>
+    <script >
+$(document).ready(function(){
+	
+var control = $('#input-1');
+	$('#input-1').fileinput({
+        language: 'kr',
+        allowedFileExtensions: ['jpg', 'txt', 'png','mp4','wmv','avi','mpeg'],
+        showUpload: false, 
+        showCaption: true,
+        showRemove: true,
+        autoReplace: true,
+        
+        //showPreview: false,
+        browseClass: "btn btn-primary",
+        //dropZoneEnabled: false,
+        //minImageWidth: 50, 
+        //minImageHeight: 50,
+        //maxImageWidth: 1000,
+        //maxImageHeight: 1000,
+        //maxFileSize: 0,
+        //minFileCount: 0,
+        maxFileCount: 1, 
+        enctype: 'multipart/form-data',
+        validateInitialCount:false,
+        previewFileIcon: "<i class='glyphicon glyphicon-king'></i>",
+        //msgFilesTooMany: "selected({n}) max number{m}！",
+        
+    });			
+});		
+    </script>
+	
+	</script>
+    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+    <script>var firebaseEmailAuth;
+   
+     var loginUserName;
+     var loginUserKey;
+     var userInfo;
+
+   // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBU2Mghux1yATbyRAXbw8qVnSBkdEiyDqg",
+    authDomain: "styleshow-login.firebaseapp.com",
+    databaseURL: "https://styleshow-login.firebaseio.com",
+    projectId: "styleshow-login",
+    storageBucket: "styleshow-login.appspot.com",
+    messagingSenderId: "332877089687"
+  };
+
+  firebase.initializeApp(config);
+  firebaseEmailAuth = firebase.auth();
+
+  userSessionCheck();
+
+  function userSessionCheck() {
+      firebaseEmailAuth.onAuthStateChanged(function (user) {
+          if (user) {
+             // var loginUserEmail = require("../sql/getUserInfo");
+              //firebaseDatabase.ref("users/" + user.uid).once('value').then(function (snapshot) {
+              //    loginUserName = snapshot.val().name;
+              loginUserName = user.uid;
+              $.ajax({
+                  data: { data: loginUserName },
+                  url: '/getLoginUser',
+                  type: "post",
+                  dataType: 'JSON',
+                  success: function (data) {//get User table from sql and save it in data
+
+                      user_info = data;
+                      document.getElementById("username").innerHTML = user_info.Nickname;
+                      document.getElementById("realusername").innerHTML = user_info.Email;
+					  document.getElementById("smallusername").innerHTML = user_info.Nickname;
+					  document.getElementById("profile").href = "/profile/"+ user_info.UID+';';
+
+					   for (var i=0;i<user_info.Length;i++)
+						{
+				     var item = '<li><li><a href="/profile/' + user_info.Follower[i] + ';'+'"><i class="fa fa-circle-o text-blue"></i> <span>' + user_info.Fnick[i] + '</span></a></li></li>'
+					  //      //alert(item);
+					       $('#libr').append(item);
+
+						}
+
+                  },
+                  error: function (textStatus) {
+                      console.log('error ' + textStatus);
+                  }
+              });
+
+                  return true
+              
+            }else {
+		  $("#follow").empty();
+              document.getElementById("username").innerHTML = "Login";
+              $("#username").removeAttr('data-toggle');
+              $("#username").attr("href", "/login");
+			  $("#username").removeAttr('data-widget');
+
+              //alert("pleaselogin");
+              return false
+          }
+          
+      });
+  }
+  
+
+
+	</script>
+    
+</body>
+</html>

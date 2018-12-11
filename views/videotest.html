@@ -1,0 +1,24 @@
+<html>
+<head>
+  <title> Stream Player </title>
+  <!--The latest versions of video.js no longer support flash or rtmp-->
+<link href="https://vjs.zencdn.net/5.19/video-js.css" rel="stylesheet">
+<script src="https://vjs.zencdn.net/5.19/video.js"></script>
+<a href="https://get.adobe.com/flashplayer">재생이 안될시 클릭</a>
+</head>
+<body>
+ <center>
+   <video 
+     id="livestream" 
+     class="video-js vjs-default-skin vjs-big-play-centered"
+     controls 
+     autoplay
+     preload="auto" 
+	 width="1280"
+	 height="720"
+     data-setup='{ }'>
+     <source src="rtmp://skkusgg.ga/live/test" type="rtmp/mp4">
+   </video>
+ </center>
+</body>
+</html>

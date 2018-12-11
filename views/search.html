@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AdminLTE 2 | General Form Elements</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+ 
+  <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+
+  
+
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+	<link href="https://vjs.zencdn.net/5.19/video-js.css" rel="stylesheet">
+
+	<script src="https://vjs.zencdn.net/5.19/video.js"></script>
+	<script src="/socket.io/socket.io.js"></script> <!-- 1 -->
+	<script src="//code.jquery.com/jquery-1.11.1.js"></script>
+
+
+<style>
+	body{
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.list_item{
+	
+	margin: 0px 0px 15px 0px;
+	
+	width: 100%;
+}
+.ImgView{
+	
+	
+overflow:hidden;
+border-radius: 4px;
+margin:6px 0 6px 0;
+}
+.list_img{
+	width: auto;
+	height: 91px;
+	max-width: 100%;
+	max-height: 100%;
+	
+	
+}
+.list_describe_item_title{
+
+	overflow: hidden;
+	text-overfow:ellipsis;
+	white-space: nowrap;
+	font-size: 18px;
+}
+.list_describe_item_info{
+
+	overflow: hidden;
+	text-overfow:ellipsis;
+	white-space: nowrap;
+	font-size: 16px;
+	color: #99a2aa;
+	
+}
+.list_describe{background: white;padding: 6px 0px 5px 10px;}
+
+.canpin_img{z-index:2;top:0;right:0px;position: absolute;height: 20px;width: 50px;}
+.canpin_biao{z-index:1; top:0;}
+.tag_item{border-radius: 100px;background: #e4e4e4;padding: 3px 12px 3px 12px;color: #525252;margin: 0px 3px 0px 3px;}
+</style>
+</head>
+<body class="hold-transition skin-blue sidebar-mini" style="overflow-y: hidden">
+    <div class="wrapper">
+        <header class="main-header">
+            <!-- Logo -->
+
+            <a href="index2.html" class="logo" style="position:fixed;">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><b>S</b></span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg"><b>Style</b>SHOW</span>
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+
+            <nav class="navbar navbar-fixed-top">
+
+
+                <div class="col-md-offset-3">
+                    <div class="navbar-left bs-example bs-example-form" style="min-width: 200px;max-width: 500px; margin-top: 4px;padding: 0px; margin-left: 15px;">
+                        <div class="input-group" style="padding-top: 3px;">
+                        	<div class="input-group-btn">
+		                        <button type="button" class="btn btn-default 
+		                        dropdown-toggle" data-toggle="dropdown" style="width: 70px;font-size: 18px;padding: 3.5px;text-align: center;"><span id="type_drop">Tag </span><span class="caret"></span>
+		                        </button>
+		                        <ul class="dropdown-menu">
+		                            <li>
+		                                <a id="select_cid" >CID</a>
+		                            </li>
+		                            <li>
+		                                <a id="select_title" >Titile</a>
+		                            </li>
+		                            <li>
+		                                <a id="select_Tag" >Tag</a>
+		                            </li>
+		                        </ul>
+	                    	</div>
+                            <input id="search_input" type="text" class="form-control" placeholder="Search...">
+                            <span class="input-group-btn">
+                                <button  id="search_btn" class="btn btn-flat">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+
+                        <ul class="dropdown-menu">
+                            <li class="header">You have 4 messages</li>
+                            <li>
+                                <!-- inner menu: contains the actual data -->
+                                <ul class="menu">
+                                    <li>
+                                        <!-- start message -->
+                                        <a href="#">
+                                            <div class="pull-left">
+                                                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                            </div>
+                                            <h4>
+                                                Support Team
+                                                <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                                            </h4>
+                                            <p>Why not buy a new awesome theme?</p>
+                                        </a>
+                                    </li>
+                                    <!-- end message -->
+                                    <li>
+                                        <a href="#">
+                                            <div class="pull-left">
+                                                <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                                            </div>
+                                            <h4v>
+                                                AdminLTE Design Team
+                                                <small><i class="fa fa-clock-o"></i> 2 hours</small>
+                                            </h4v>
+                                            <p>Why not buy a new awesome theme?</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="pull-left">
+                                                <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                                            </div>
+                                            <h4>
+                                                Developers
+                                                <small><i class="fa fa-clock-o"></i> Today</small>
+                                            </h4>
+                                            <p>Why not buy a new awesome theme?</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="pull-left">
+                                                <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                                            </div>
+                                            <h4>
+                                                Sales Department
+                                                <small><i class="fa fa-clock-o"></i> Yesterday</small>
+                                            </h4>
+                                            <p>Why not buy a new awesome theme?</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="pull-left">
+                                                <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                                            </div>
+                                            <h4>
+                                                Reviewers
+                                                <small><i class="fa fa-clock-o"></i> 2 days</small>
+                                            </h4>
+                                            <p>Why not buy a new awesome theme?</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="footer"><a href="#">See All Messages</a></li>
+                        </ul>
+
+                        <!-- Notifications: style can be found in dropdown.less -->
+
+
+                        <ul class="dropdown-menu">
+                            <li class="header">You have 10 notifications</li>
+                            <li>
+                                <!-- inner menu: contains the actual data -->
+                                <ul class="menu">
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the
+                                            page and may cause design problems
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-users text-red"></i> 5 new members joined
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-shopping-cart text-green"></i> 25 sales made
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-user text-red"></i> You changed your username
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="footer"><a href="#">View all</a></li>
+                        </ul>
+
+                        <!-- Tasks: style can be found in dropdown.less -->
+
+
+                        <li class="dropdown user user-menu">
+                            <a id="username" href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                                <span class="hidden-xs">홍길동</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- User image -->
+                                <li class="user-header">
+                                    <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                    <p>
+                                        <span id="realusername">Alexander Pierce - Web Developer</span>
+                                        <small>Member since Nov. 2012</small>
+                                    </p>
+                                </li>
+                                <!-- Menu Body -->
+                                <li class="user-body">
+                                    <div class="row">
+                                        <div class="col-xs-4 text-center">
+                                            <a href="#">Followers</a>
+                                        </div>
+                                        <div class="col-xs-4 text-center">
+                                            <a href="#">Sales</a>
+                                        </div>
+                                        <div class="col-xs-4 text-center">
+                                            <a href="#">Friends</a>
+                                        </div>
+                                    </div>
+                                    <!-- /.row -->
+                                </li>
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <button id="SignOut" class="btn btn-default btn-flat SignOut" type="button">Sign out</button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Control Sidebar Toggle Button -->
+
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar" style="position:fixed;">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                <!-- Sidebar user panel -->
+                <!-- search form -->
+                <!-- /.search form -->
+                <!-- sidebar menu: : style can be found in sidebar.less -->
+                <ul class="sidebar-menu" data-widget="tree">
+                    <li class="header">라이브러리</li>
+                    <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Item 1</span></a></li>
+                    <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Item 2</span></a></li>
+                    <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Item 3</span></a></li>
+                </ul>
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+        <!-- Content Wrapper. Contains page content -->
+        <div id="content_bg" class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    General Form Elements
+                    <small>Preview</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                    <li><a href="#">Forms</a></li>
+                    <li class="active">General Elements</li>
+                </ol>
+            </section>
+            <!-- Main content -->
+            <section class="content">
+                <div  class="row">
+
+                    <div id="Result_List" class="col-xs-12 col-sm-12 col-lg-8 col-md-12 col-lg-offset-2 pre-scrollable" style="padding:20px 30px 0px 30px;background-color: white;">
+                        
+                     
+                      
+                          	
+                     
+                       
+                       
+										
+	<!--
+    	
+   								
+			<div class="row" style="background-color: white;">
+	<div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 list_item form-inline">
+		<div class="row">
+			<a href="#">
+				<div class="ImgView col-xs-2 col-sm-2 col-lg-2 col-md-2">
+					<img class="list_img canpin_biao" src="clothes2.png">
+          <img class="list_img canpin_img" src="live.png">
+				</div>
+				<div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 list_describe">
+					<div class="list_describe_item_title">title</div>
+					<div class="list_describe_item_info">
+						<i class="fa fa-play-circle" aria-hidden="true" style="color:ride margin-top: 10px;"></i> <span>View: </span><span>'+views+'</span></div>
+					<div class="list_describe_item_info">
+						<i class="fa fa-thumbs-o-up" aria-hidden="true" style="color:blue"></i> <span>Like: </span><span>'+like+'</span></div>
+						
+						<div class="list_describe_item_info"><i class="fa fa-tags" aria-hidden="true"></i>
+							<span>Tags: </span>
+							<span class="tag_item">good</span>
+						</div>
+						
+					<div class="list_describe_item_info"><span>UploadDate: </span><span>'+Insertdates+'</span></div>
+					 </div>
+			</a></div></div></div>
+										 -->	
+                        
+                        
+                    </div>
+
+                </div>
+            </section>
+            <!-- /.content -->
+        </div>
+
+
+
+
+
+
+    </div>
+    <!-- jQuery 3 -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="bower_components/fastclick/lib/fastclick.js"></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="dist/js/demo.js"></script>
+    <script src="laydate/laydate.js"></script>
+    <script type="text/javascript"></script>
+    	
+    
+    <script>
+    var num=0;
+    var serch_type="tag"
+    $(document).ready(function(){
+    	var defheight=$("#content_bg").height();
+    	$("#Result_List").css("min-height",defheight*0.9+"px");
+    	
+    	$('#search_input').on('keypress',function(event)
+    	{
+    		if(event.keyCode==13){
+    			$('#search_btn').trigger('click');
+    		}
+    	});
+
+
+	 $("#select_title").click(function()
+     {
+     	$("#type_drop").text("Title ");
+     	serch_type="title";
+     });
+     
+     $("#select_cid").click(function()
+     {
+     	$("#type_drop").text("CID ");
+     	serch_type="cid";
+     	
+     });
+     $("#select_Tag").click(function()
+     {
+     	$("#type_drop").text("Tag ");
+     	serch_type="tag";
+     	
+     });
+     
+     
+     $("#search_btn").click(function()
+     {
+			 
+	  var serchContent=$("#search_input").val();
+	  $("#search_input").val(serchContent);
+
+
+	   var searchData={type:serch_type,val:serchContent};
+	
+    
+    $.ajax({
+                data: searchData,
+                url: '/search/request',
+                type:"post",
+                dataType: 'JSON',
+                success: function(data)
+   {
+   	$('#Result_List').text("");
+		var myjson=data;
+	    num=myjson.length;
+	    var heigh=num*118+30;
+	    
+	    
+	    if(heigh<=parseInt(defheight))
+	    {
+	    	heigh=defheight;
+	    }
+			$("#Result_List").css("height",heigh+"px");
+			
+	    for (var i=0;i<num;i++)
+	    {
+	    	var tagsArr=[];
+	    	var cid=myjson[i].CID;
+	    	var title=myjson[i].Title
+	    	var views=myjson[i].Views
+	    	var Insertdate=myjson[i].Insertdate
+	    	var like=myjson[i].like
+	    	var type=myjson[i].Type;
+	    	var Insertdates="0";
+	    	if(Insertdate!=null)
+	    	{
+	    		Insertdates=Insertdate.split("T");
+	    		var str_point=Insertdates[1].indexOf(".")
+	    		Insertdates=Insertdates[0]+" "+Insertdates[1].substring(0,str_point);
+	    	}
+        if(myjson[i].Tags!=null)
+        {
+        	tagsArr=myjson[i].Tags.split(",");
+        }
+				console.log(tagsArr[0]);
+				var tenlen=tagsArr.length;
+				if (tenlen>0 && tagsArr[tenlen-1]=="")
+				{
+					tagsArr.pop();
+				}
+				
+				if(type=="Picture")
+				{type="picture.png";}
+				else if(type=="Streaming")
+				{type="live.png";}
+				else
+				{type="video.png";}
+				
+                             
+			var item='<div  class="row" style="background-color: white;"><div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 list_item form-inline"><div class="row">'+
+			'<a href="/content/'+cid+'"><div class="ImgView col-xs-2 col-sm-2 col-lg-2 col-md-2" >'+
+			'<img class="list_img canpin_biao" src="clothes2.png"><img class="list_img canpin_img" src="'+type+'">'+
+			'</div><div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 list_describe" >'+
+			'<div class="list_describe_item_title" >'+title+'</div>'+
+			'<div class="list_describe_item_info" ><i class="fa fa-play-circle" aria-hidden="true" style="color:ride margin-top: 10px;"></i> <span>View: </span><span>'+views+'</span></div>'+
+			'<div class="list_describe_item_info" ><i class="fa fa-thumbs-o-up" aria-hidden="true" style="color:blue"></i> <span>Like: </span><span>'+like+'</span></div>'+
+			'<div class="list_describe_item_info"><i class="fa fa-tags" aria-hidden="true"></i><span>Tags: </span>';
+			
+			var temitem='';
+			for (x in tagsArr)
+			{
+				temitem+='<span class="tag_item">'+tagsArr[x]+'</span>'
+			  
+			}
+			
+			item=item+temitem+'</div><div class="list_describe_item_info" ><span>UploadDate: </span><span>'+Insertdates+'</span></div></div></a></div></div></div>';
+			
+                        			
+			$('#Result_List').append(item);
+	
+	    }
+
+
+   },
+   error: function(textStatus)
+   {
+     console.log('error ' + textStatus );
+   }});
+	  
+	  
+	 });//click
+
+   });//ready
+
+    </script>
+
+
+
+</body>
+</html>
