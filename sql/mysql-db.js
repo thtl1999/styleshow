@@ -5,7 +5,7 @@ var connection = mysql.createPool({
     host: 'localhost',
     post: 3306,
     user: 'root',
-    password: 'soft14#Skku',
+    password: 'PASSWORD',
     database: 'ss_db'
 });
 
