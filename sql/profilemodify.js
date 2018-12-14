@@ -165,10 +165,27 @@ app.get('/profilemodify',function (req,res,next){
 	    };
 	    res.redirect("/profilemodify");
 	});
-	app.post('/profilemodify/delete', function (req, res) {
 
-	    var userdata = {};
-	    res.json(userdatas);
+
+	app.post('/profilemodify/delete', function (req, res) {
+	    var cid = req.body.delete_cid;
+	    var sql = 'DELETE FROM Contents WHERE CID = "' +cid +'"' ;
+	    console.log("SQL : " + sql);
+	    mysqlDB.query(sql, function (err, rows) {
+	        if (err) {
+	            console.log('[SELECT ERROR] - ', err.message);
+	            res.json({ result: 'fail' });
+	        }
+	        else
+	        {
+	            console.log("success : Delete " + cid);
+	            
+	            res.json({ result: 'Success' });
+	        }
+	        //console.log(result);
+
+	    });
+	    
 	});
 };
 function userSessionCheck() {

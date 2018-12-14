@@ -62,9 +62,10 @@ require('./sql/profilemodify')(app,fs);	//get/profileModify
 require('./sql/upload')(app,fs);	//upload.html get/upload post/uploadcontent
 require('./sql/content')(app,mysqlDB);
 //require('./sql/generaltest')(app);
-require('./sql/profile')(app,fs); 
+require('./sql/profile')(app,fs);
 require('./sql/search')(app,mysqlDB);
 require('./sql/like')(app,mysqlDB);
+require('./sql/follow')(app,fs); 
 //require('./sql/like')(app,fs);
 //html functions
 

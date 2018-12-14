@@ -275,37 +275,35 @@ overflow:hidden;
                     <!-- left column -->
                     <div id="AutoHeight" class="col-md-8 pre-scrollable" style="margin-bottom: 0px;padding-bottom: 0px;">
                         <!-- general form elements -->
-                        <div class="box box-danger">
-                            <div class="box-header with-border" id="vhead">
-                                <h3 class="box-title" style="font-size:big">&nbsp;&nbsp;<strong>[제목]</strong>&nbsp; <%-Titledata%></h3>
-                            </div>
+                        <div class="box box-green">
+                     
                             <!-- /.box-header -->
                             <!-- form start -->
-                            <div class="box-body" style="text-align: center; margin:0px">
+                            <div class="box-header with-border" style="text-align: center; margin:0px">
+															
 															
                                 <%-TypeFollowHTML%>
 
 
-                            </div><div class = "box-body">조회수 <a id=see style="font-size:small; color:gray;">&nbsp;0</a>회</div>
-                            <div class="box-footer">
-                                &nbsp; <img src="<%-Profileimage%>" class="img-circle" alt="User Image" style="width:10px;height:10px; float:left;">
-                                <div style="float:left;">
-                                    <br><p style="font-size:small;"><strong><%-Usernamedata%></strong></p>
-									<p style="color=gray; font-size:small;"><%-ContentData%> </p>
-									<p style="color=gray; font-size:small;">게시일: <%-ContentDate%> </p>
-                                </div>
-                                <div style="float:right;">
-`
-									<form action="/like/<%= Cid %>" method="get">
+                            </div>
+							<div class="box-header" id="vhead">
+							<h3 class="box-title" style="font-size:big">&nbsp;&nbsp;<strong><%-Titledata%></strong></h3>
+                            </div>
+							<div class = "box-body" style="fint-size:middle; color:gray;">&nbsp;&nbsp;조회수 <a id=see style="font-size:small; color:gray;">&nbsp;0</a>회 
+							
+							<form action="/like/<%= Cid %>" method="get" style="float:right;">
 									<button id="likey" type="submit" href="#" class="btn btn-link dislike">
-                                    <i id=dislike class="fa fa-thumbs-o-up" style="color:blue;" onclick="likey();"> <%-LLikevalue%> </i></button>&nbsp;
+                                    <i id=dislike class="fa fa-thumbs-o-up" style="color:blue;" onclick="likey();"> <%-LLikevalue%> </i></button>
 									</form>
-
-									<button type="button" class="btn btn-link dislike">
-                                    <i id=dislike class="fa fa-thumbs-o-down" style="color:red;">0</i></button>&nbsp;
-								
+									</div>
+                            <div class="box-footer">
+                                &nbsp; <a href="/profile/<%-UserId%>;" style="text-decoration:none ; color:#000000"><img src="<%-Profileimage%>" class="img-circle" alt="User Image" style="width:70px;height:70px; float:left;"></a>
+                                <div style="float:left;">
+                                    <br><a href="/profile/<%-UserId%>;" style="text-decoration:none ; color:#000000"><p style="font-size:small;"><strong>&nbsp;&nbsp;<%-Usernamedata%></strong></p></a>
+									<p style="color:gray; font-size:small;">&nbsp;&nbsp;게시일: <%-ContentDate%> </p>
                                 </div>
                             </div>
+							<div class="box-footer"><p style="color=gray; font-size:small; margin-left:5px;"><%-ContentData%> </p></div>
 
                         </div>
                         <div style="min-height: 600px;">
@@ -671,10 +669,8 @@ AutoSize();
 			}
 		});
 
-		socket.on('change name', function(name)
-		{ //4
-			$('#name').text(name);
-		});
+		<%-Chatscript%>
+		
     </script>
 	<script type="text/javascript">
 	$(document).ready(function(){

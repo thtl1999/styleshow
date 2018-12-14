@@ -57,7 +57,10 @@ module.exports = function (app) {
 
             else {
                 console.log(err.message);
-                res.send('<script type="text/javascript">alert("' + err.message + ' Please retry");window.location.href = "/register";</script>');
+                if(phone == 'google.com' || phone =='facebook.com')
+                    res.send('<script type="text/javascript">window.location.href = "/";</script>');
+                else
+                    res.send('<script type="text/javascript">alert("' + err.message + ' Please retry");window.location.href = "/register";</script>');
             }
         });
 

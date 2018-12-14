@@ -65,11 +65,24 @@ module.exports = function(app,mysql){
 	  {
 		  //get picture_url from db
 		  
-			 html=' <img id="ImgView" src="../uploads/' + rows[0].file +'"  />';
+			 html=' <img id="ImgView" src="../uploads/' + rows[0].file +'" style="height:400px;" />';
 			 
 			  
 		 
 	  }
+	  
+	  if (!req.session.UID)
+	  {
+		  var chatscript = "socket.on('change name', function(name){ //4$('#name').text(name);});";
+	  }
+	  else
+	  {
+		  var chatscript = "$('#name').text('" + req.session.Nickname + "');";
+	  }
+	  
+	  
+	  
+	  
 	  
 	  
 	  res.render(filePath,{
@@ -83,7 +96,9 @@ module.exports = function(app,mysql){
 				 Productdata: rows[0].html,
 				 ContentData: rows[0].text,
 				 LLikevalue: rows[0].LLike,
-				 Cid: cid
+				 UserId: rows[0].CUID,
+				 Cid: cid,
+				 Chatscript: chatscript
 		 
 		  });
 	  

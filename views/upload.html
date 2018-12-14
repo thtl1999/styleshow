@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 	<!DOCTYPE html>
 <html>
@@ -398,8 +398,8 @@ var control = $('#input-1');
 
                       user_info = data;
                       document.getElementById("username").innerHTML = user_info.Nickname;
-                      document.getElementById("realusername").innerHTML = user_info.Email;
-					  document.getElementById("smallusername").innerHTML = user_info.Nickname;
+                      document.getElementById("realusername").innerHTML = user_info.Nickname;
+                      document.getElementById("smallusername").innerHTML = user_info.Mail;
 					  document.getElementById("profile").href = "/profile/"+ user_info.UID+';';
 
 					   for (var i=0;i<user_info.Length;i++)
@@ -431,7 +431,18 @@ var control = $('#input-1');
           
       });
   }
-  
+  $(document).ready(function () {
+      $(document).on('click', '.SignOut', function () {
+          firebaseEmailAuth.signOut().then(function () {
+              alert("Log out! Good Bye!")
+              window.location.href = "/"
+          })
+        .catch(function (error) {
+            alert(error);
+        });
+
+      });
+  });
 
 
 	</script>

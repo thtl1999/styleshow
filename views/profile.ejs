@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 
@@ -219,7 +219,7 @@
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">
-                                        <a id="profile" href="#" class="btn btn-default btn-flat">내 프로필</a>
+                                        <a id="profile" href="/profile/<%= My_uid %>;" class="btn btn-default btn-flat">내 프로필</a>
                                     </div>
                                     <div class="pull-right">
                                         <a id="SignOut" class="btn btn-default btn-flat SignOut" type="button">로그아웃</a>
@@ -288,7 +288,7 @@
                 </li>
               </ul>
 
-              <a href = "/follow/<%= Uid %>;" class="btn btn-primary btn-block" id = "follow_btn"><b><%= Follow %></b></a>
+              <a class="btn btn-primary btn-block" id = "follow_btn"><b><%= Follow %></b></a>
             </div>
             <!-- /.box-body-->
           </div>
@@ -301,35 +301,31 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <strong><i class="fa fa-book margin-r-5"></i> 학력</strong>
+              <strong><i class="fa fa-asterisk margin-r-5"></i> 이름</strong>
 
               <p class="text-muted">
-                B.S. in Computer Science from the University of Tennessee at Knoxville
+                <%= Name %>
               </p>
 
               <hr>
 
-              <strong><i class="fa fa-map-marker margin-r-5"></i> 위치</strong>
+              <strong><i class="fa fa-address-card margin-r-5"></i> 주소</strong>
 
-              <p class="text-muted">Malibu, California</p>
+              <p class="text-muted"><%= Address %></p>
 
               <hr>
 
-              <strong><i class="fa fa-pencil margin-r-5"></i> 특기</strong>
+              <strong><i class="fa fa-birthday-cake margin-r-5"></i> 생년월일</strong>
 
-              <p>
-                <span class="label label-danger">UI Design</span>
-                <span class="label label-success">Coding</span>
-                <span class="label label-info">Javascript</span>
-                <span class="label label-warning">PHP</span>
-                <span class="label label-primary">Node.js</span>
+              <p  class="text-muted"><%= Bdate %>
+
               </p>
 
               <hr>
 
               <strong><i class="fa fa-file-text-o margin-r-5"></i> 자기소개</strong>
 
-              <p>구독해주세요.</p>
+              <p>구독 많이해주세요.</p>
             </div>
             <!-- /.box-body -->
           </div>
@@ -340,9 +336,9 @@
           <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
               <li class="active"><a href="#activity" data-toggle="tab">홈</a></li>
-              <!--<li><a href="#timeline" data-toggle="tab">스트리밍</a></li>
-              <li><a href="#settings" data-toggle="tab">사진</a></li>
-              <li><a href="#timeline" data-toggle="tab">동영상</a></li>-->
+              <li><a href="#streaming" data-toggle="tab">스트리밍</a></li>
+              <li><a href="#picture" data-toggle="tab">사진</a></li>
+              <li><a href="#video" data-toggle="tab">동영상</a></li>
             </ul>
             <div class="tab-content">
               <div class="active tab-pane" id="activity">
@@ -358,9 +354,9 @@
                   </div>
                   <!-- /.user-block -->
                   <div class="row margin-bottom">
-                    <div class="col-sm-6">
+                    <div class="col-sm-6" style="text-align: center; margin:0px;">
                       <a href="/content/<%=Con_best%>" style="text-decoration:none ; color:#000000">
-                      <img class="img-responsive" src="<%=Img_best%>" alt="Photo">
+                      <img  style="display: inline-block; height:250px; object-fit: fill;" class="img-responsive" src="<%=Img_best%>" alt="Photo">
                     </a>
                     </div>
                     <!-- /.col -->
@@ -371,14 +367,13 @@
                             <h3 class="box-title"style="font-size:big"><strong><%= Title_best %></strong></h3>
                           </a>
                           </div>
-                          <p style="font-size:small; color:gray;">&nbsp; &nbsp;&nbsp;조회수 : <%= View_best %><br>&nbsp;&nbsp;&nbsp;<%= Date_best %></p>
-                          <div class="box-footer">
-                            <br>안녕하세요<br>
-                            안녕하세요<br>
+                          <p style="font-size:80%; color:gray;">&nbsp; &nbsp;&nbsp;조회수 : <%= View_best %><br>&nbsp;&nbsp;&nbsp;<%= Date_best %></p>
+                          <div class="box-footer" id="best_explain">
+                            <br><%=Contextdata%><br>
+                            <br><br>
+	좋아요&구독 많이 눌러주세요.
                             <br>
-                            #옷 #옷 #옷 <br>
-                            #바지 #바지 #바지 <br>
-                            좋아요&구독 많이 눌러주세요.
+                            
                            </div>
                       </div>
                       <!-- /.row -->
@@ -389,31 +384,31 @@
                   <div class="row margin-bottom">
                     <div class="col-sm-3">
                       <a href="/content/<%=Con[0]%>" style="text-decoration:none ; color:#000000">
-                      <img class="img-responsive" src="<%=Img[0]%>" alt="Photo" style="margin-bottom:10px;">
-                      <strong>[<%= Title[0] %>]</strong><br>
-                      <p style="font-size:small; color:gray;">조회수 : <%= View[0] %><br><%= Date[0] %></p>
+                      <img class="img-responsive" src="<%=Img[0]%>" alt="Photo" style="display: inline-block; margin-bottom:10px; height:130px; width: 300px; object-fit: fill;">
+                      <strong style="font-size:95%;">[<%= Title[0] %>]</strong>
+                      <p style="font-size:80%; color:gray;">조회수 : <%= View[0] %><br><%= Date[0] %></p>
                     </a>
                     </div>
                     <!-- /.col -->
                     <div class="col-sm-3">
                       <a href="/content/<%=Con[1]%>" style="text-decoration:none ; color:#000000">
-                      <img class="img-responsive" src="<%=Img[1]%>" alt="Photo" style="margin-bottom:10px;">
-                      <strong>[<%= Title[1] %>]</strong><br>
-                      <p style="font-size:small; color:gray;">조회수 : <%= View[1] %><br><%= Date[1] %></p>
+                      <img class="img-responsive" src="<%=Img[1]%>" alt="Photo" style="display: inline-block; margin-bottom:10px; height:130px; width: 300px; object-fit: fill;">
+                      <strong style="font-size:95%;">[<%= Title[1] %>]</strong><br>
+                      <p style="font-size:80%; color:gray;">조회수 : <%= View[1] %><br><%= Date[1] %></p>
                     </a>
                     </div>
                     <div class="col-sm-3">
                       <a href="/content/<%=Con[2]%>" style="text-decoration:none ; color:#000000">
-                      <img class="img-responsive" src="<%=Img[2]%>" alt="Photo" style="margin-bottom:10px;">
-                      <strong>[<%= Title[2] %>]</strong><br>
-                      <p style="font-size:small; color:gray;">조회수 : <%= View[2] %><br><%= Date[2] %></p>
+                      <img class="img-responsive" src="<%=Img[2]%>" alt="Photo" style="display: inline-block; margin-bottom:10px; height:130px; width: 300px; object-fit: fill;">
+                      <strong style="font-size:95%;">[<%= Title[2] %>]</strong><br>
+                      <p style="font-size:80%; color:gray;">조회수 : <%= View[2] %><br><%= Date[2] %></p>
                     </a>
                     </div>
                     <div class="col-sm-3">
                       <a href="/content/<%=Con[3]%>" style="text-decoration:none ; color:#000000">
-                      <img class="img-responsive" src="<%=Img[3]%>" alt="Photo" style="margin-bottom:10px;">
-                      <strong>[<%= Title[3] %>]</strong><br>
-                      <p style="font-size:small; color:gray;">조회수 : <%= View[3] %><br><%= Date[3] %></p>
+                      <img class="img-responsive" src="<%=Img[3]%>" alt="Photo" style="display: inline-block; margin-bottom:10px; height:130px; width: 300px; object-fit: fill;">
+                      <strong style="font-size:95%;">[<%= Title[3] %>]</strong><br>
+                      <p style="font-size:80%; color:gray;">조회수 : <%= View[3] %><br><%= Date[3] %></p>
                     </a>
                     </div>
                     <!-- /.col -->
@@ -421,30 +416,30 @@
                   <div class="row margin-bottom">
                     <div class="col-sm-3">
                       <a href="/content/<%=Con[4]%>" style="text-decoration:none ; color:#000000">
-                      <img class="img-responsive" src="<%=Img[4]%>" alt="Photo" style="margin-bottom:10px;">
-                      <strong>[<%= Title[4] %>]</strong><br>
-                      <p style="font-size:small; color:gray;">조회수 : <%= View[4] %><br><%= Date[4] %></p>
+                      <img class="img-responsive" src="<%=Img[4]%>" alt="Photo" style="display: inline-block; margin-bottom:10px; height:130px; width: 300px; object-fit: fill;">
+                      <strong style="font-size:95%;">[<%= Title[4] %>]</strong><br>
+                      <p style="font-size:80%; color:gray;">조회수 : <%= View[4] %><br><%= Date[4] %></p>
                     </a>
                     </div>
                     <div class="col-sm-3">
                       <a href="/content/<%=Con[5]%>" style="text-decoration:none ; color:#000000">
-                      <img class="img-responsive" src="<%=Img[5]%>" alt="Photo" style="margin-bottom:10px;">
-                      <strong>[<%= Title[5] %>]</strong><br>
-                      <p style="font-size:small; color:gray;">조회수 : <%= View[5] %><br><%= Date[5] %></p>
+                      <img class="img-responsive" src="<%=Img[5]%>" alt="Photo" style="display: inline-block; margin-bottom:10px; height:130px; width: 300px; object-fit: fill;">
+                      <strong style="font-size:95%;">[<%= Title[5] %>]</strong><br>
+                      <p style="font-size:80%; color:gray;">조회수 : <%= View[5] %><br><%= Date[5] %></p>
                     </a>
                     </div>
                     <div class="col-sm-3">
                       <a href="/content/<%=Con[6]%>" style="text-decoration:none ; color:#000000">
-                      <img class="img-responsive" src="<%=Img[6]%>" alt="Photo" style="margin-bottom:10px;">
-                      <strong>[<%= Title[6] %>]</strong><br>
-                      <p style="font-size:small; color:gray;">조회수 : <%= View[6] %><br><%= Date[6] %></p>
+                      <img class="img-responsive" src="<%=Img[6]%>" alt="Photo" style="display: inline-block; margin-bottom:10px; height:130px; width: 300px; object-fit: fill;">
+                      <strong style="font-size:95%;">[<%= Title[6] %>]</strong><br>
+                      <p style="font-size:80%; color:gray;">조회수 : <%= View[6] %><br><%= Date[6] %></p>
                     </a>
                     </div>
                     <div class="col-sm-3">
                       <a href="/content/<%=Con[7]%>" style="text-decoration:none ; color:#000000">
-                      <img class="img-responsive" src="<%=Img[7]%>" alt="Photo" style="margin-bottom:10px;">
-                      <strong>[<%= Title[7] %>]</strong><br>
-                      <p style="font-size:small; color:gray;">조회수 : <%= View[7] %><br><%= Date[7] %></p>
+                      <img class="img-responsive" src="<%=Img[7]%>" alt="Photo" style="display: inline-block; margin-bottom:10px; height:130px; width: 300px; object-fit: fill;">
+                      <strong style="font-size:95%;">[<%= Title[7] %>]</strong><br>
+                      <p style="font-size:80%; color:gray;">조회수 : <%= View[7] %><br><%= Date[7] %></p>
                     </a>
                     </div>
                     <!-- /.col -->
@@ -454,154 +449,204 @@
                 <!-- /.post -->
               </div>
               <!-- /.tab-pane -->
-              <div class="tab-pane" id="timeline">
+              <div class="tab-pane" id="picture">
                 <!-- The timeline -->
-                <ul class="timeline timeline-inverse">
-                  <!-- timeline time label -->
-                  <li class="time-label">
-                        <span class="bg-red">
-                          10 Feb. 2014
-                        </span>
-                  </li>
-                  <!-- /.timeline-label -->
-                  <!-- timeline item -->
-                  <li>
-                    <i class="fa fa-envelope bg-blue"></i>
-
-                    <div class="timeline-item">
-                      <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
-
-                      <h3 class="timeline-header"><a href="#">Support Team</a> sent you an email</h3>
-
-                      <div class="timeline-body">
-                        Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles,
-                        weebly ning heekya handango imeem plugg dopplr jibjab, movity
-                        jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle
-                        quora plaxo ideeli hulu weebly balihoo...
-                      </div>
-                      <div class="timeline-footer">
-                        <a class="btn btn-primary btn-xs">Read more</a>
-                        <a class="btn btn-danger btn-xs">Delete</a>
-                      </div>
+                 <div class="row margin-bottom">
+                    <div class="col-sm-3">
+                      <a href="/content/<%=Con2[0]%>" style="text-decoration:none ; color:#000000">
+                      <img class="img-responsive" src="<%=Img2[0]%>" alt="Photo" style="display: inline-block; margin-bottom:10px; height:130px; width: 300px; object-fit: fill;">
+                      <strong style="font-size:95%;">[<%= Title2[0] %>]</strong><br>
+                      <p style="font-size:80%; color:gray;">조회수 : <%= View2[0] %><br><%= Date2[0] %></p>
+                    </a>
                     </div>
-                  </li>
-                  <!-- END timeline item -->
-                  <!-- timeline item -->
-                  <li>
-                    <i class="fa fa-user bg-aqua"></i>
-
-                    <div class="timeline-item">
-                      <span class="time"><i class="fa fa-clock-o"></i> 5 mins ago</span>
-
-                      <h3 class="timeline-header no-border"><a href="#">Sarah Young</a> accepted your friend request
-                      </h3>
+                    <!-- /.col -->
+                    <div class="col-sm-3">
+                      <a href="/content/<%=Con2[1]%>" style="text-decoration:none ; color:#000000">
+                      <img class="img-responsive" src="<%=Img2[1]%>" alt="Photo" style="display: inline-block; margin-bottom:10px; height:130px; width: 300px; object-fit: fill;">
+                      <strong style="font-size:95%;">[<%= Title2[1] %>]</strong><br>
+                      <p style="font-size:80%; color:gray;">조회수 : <%= View2[1] %><br><%= Date2[1] %></p>
+                    </a>
                     </div>
-                  </li>
-                  <!-- END timeline item -->
-                  <!-- timeline item -->
-                  <li>
-                    <i class="fa fa-comments bg-yellow"></i>
-
-                    <div class="timeline-item">
-                      <span class="time"><i class="fa fa-clock-o"></i> 27 mins ago</span>
-
-                      <h3 class="timeline-header"><a href="#">Jay White</a> commented on your post</h3>
-
-                      <div class="timeline-body">
-                        Take me to your leader!
-                        Switzerland is small and neutral!
-                        We are more like Germany, ambitious and misunderstood!
-                      </div>
-                      <div class="timeline-footer">
-                        <a class="btn btn-warning btn-flat btn-xs">View comment</a>
-                      </div>
+                    <div class="col-sm-3">
+                      <a href="/content/<%=Con2[2]%>" style="text-decoration:none ; color:#000000">
+                      <img class="img-responsive" src="<%=Img2[2]%>" alt="Photo" style="display: inline-block; margin-bottom:10px; height:130px; width: 300px; object-fit: fill;">
+                      <strong style="font-size:95%;">[<%= Title2[2] %>]</strong><br>
+                      <p style="font-size:80%; color:gray;">조회수 : <%= View2[2] %><br><%= Date2[2] %></p>
+                    </a>
                     </div>
-                  </li>
-                  <!-- END timeline item -->
-                  <!-- timeline time label -->
-                  <li class="time-label">
-                        <span class="bg-green">
-                          3 Jan. 2014
-                        </span>
-                  </li>
-                  <!-- /.timeline-label -->
-                  <!-- timeline item -->
-                  <li>
-                    <i class="fa fa-camera bg-purple"></i>
-
-                    <div class="timeline-item">
-                      <span class="time"><i class="fa fa-clock-o"></i> 2 days ago</span>
-
-                      <h3 class="timeline-header"><a href="#">Mina Lee</a> uploaded new photos</h3>
-
-                      <div class="timeline-body">
-                        <img src="http://placehold.it/150x100" alt="..." class="margin">
-                        <img src="http://placehold.it/150x100" alt="..." class="margin">
-                        <img src="http://placehold.it/150x100" alt="..." class="margin">
-                        <img src="http://placehold.it/150x100" alt="..." class="margin">
-                      </div>
+                    <div class="col-sm-3">
+                      <a href="/content/<%=Con2[3]%>" style="text-decoration:none ; color:#000000">
+                      <img class="img-responsive" src="<%=Img2[3]%>" alt="Photo" style="display: inline-block; margin-bottom:10px; height:130px; width: 300px; object-fit: fill;">
+                      <strong style="font-size:95%;">[<%= Title2[3] %>]</strong><br>
+                      <p style="font-size:80%; color:gray;">조회수 : <%= View2[3] %><br><%= Date2[3] %></p>
+                    </a>
                     </div>
-                  </li>
-                  <!-- END timeline item -->
-                  <li>
-                    <i class="fa fa-clock-o bg-gray"></i>
-                  </li>
-                </ul>
+                    <!-- /.col -->
+                  </div>
+				  <div class="row margin-bottom">
+                    <div class="col-sm-3">
+                      <a href="/content/<%=Con2[4]%>" style="text-decoration:none ; color:#000000">
+                      <img class="img-responsive" src="<%=Img2[4]%>" alt="Photo" style="display: inline-block; margin-bottom:10px; height:130px; width: 300px; object-fit: fill;">
+                      <strong style="font-size:95%;">[<%= Title2[4] %>]</strong><br>
+                      <p style="font-size:80%; color:gray;">조회수 : <%= View2[4] %><br><%= Date2[4] %></p>
+                    </a>
+                    </div>
+                    <div class="col-sm-3">
+                      <a href="/content/<%=Con2[5]%>" style="text-decoration:none ; color:#000000">
+                      <img class="img-responsive" src="<%=Img2[5]%>" alt="Photo" style="display: inline-block; margin-bottom:10px; height:130px; width: 300px; object-fit: fill;">
+                      <strong style="font-size:95%;">[<%= Title2[5] %>]</strong><br>
+                      <p style="font-size:80%; color:gray;">조회수 : <%= View2[5] %><br><%= Date2[5] %></p>
+                    </a>
+                    </div>
+                    <div class="col-sm-3">
+                      <a href="/content/<%=Con2[6]%>" style="text-decoration:none ; color:#000000">
+                      <img class="img-responsive" src="<%=Img2[6]%>" alt="Photo" style="display: inline-block; margin-bottom:10px; height:130px; width: 300px; object-fit: fill;">
+                      <strong style="font-size:95%;">[<%= Title2[6] %>]</strong><br>
+                      <p style="font-size:80%; color:gray;">조회수 : <%= View2[6] %><br><%= Date2[6] %></p>
+                    </a>
+                    </div>
+                    <div class="col-sm-3">
+                      <a href="/content/<%=Con2[7]%>" style="text-decoration:none ; color:#000000">
+                      <img class="img-responsive" src="<%=Img2[7]%>" alt="Photo" style="display: inline-block; margin-bottom:10px; height:130px; width: 300px; object-fit: fill;">
+                      <strong style="font-size:95%;">[<%= Title2[7] %>]</strong><br>
+                      <p style="font-size:80%; color:gray;">조회수 : <%= View2[7] %><br><%= Date2[7] %></p>
+                    </a>
+                    </div>
+                    <!-- /.col -->
+                  </div>
+				  
               </div>
               <!-- /.tab-pane -->
 
-              <div class="tab-pane" id="settings">
-                <form class="form-horizontal">
-                  <div class="form-group">
-                    <label for="inputName" class="col-sm-2 control-label">Name</label>
-
-                    <div class="col-sm-10">
-                      <input type="email" class="form-control" id="inputName" placeholder="Name">
+              <div class="tab-pane" id="video">
+                <div class="row margin-bottom">
+                    <div class="col-sm-3">
+                      <a href="/content/<%=Con3[0]%>" style="text-decoration:none ; color:#000000">
+                      <img class="img-responsive" src="<%=Img3[0]%>" alt="Photo" style="display: inline-block; margin-bottom:10px; height:130px; width: 300px; object-fit: fill;">
+                      <strong style="font-size:95%;">[<%= Title3[0] %>]</strong><br>
+                      <p style="font-size:80%; color:gray;">조회수 : <%= View3[0] %><br><%= Date3[0] %></p>
+                    </a>
                     </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputEmail" class="col-sm-2 control-label">Email</label>
-
-                    <div class="col-sm-10">
-                      <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                    <!-- /.col -->
+                    <div class="col-sm-3">
+                      <a href="/content/<%=Con3[1]%>" style="text-decoration:none ; color:#000000">
+                      <img class="img-responsive" src="<%=Img3[1]%>" alt="Photo" style="display: inline-block; margin-bottom:10px; height:130px; width: 300px; object-fit: fill;">
+                      <strong style="font-size:95%;">[<%= Title3[1] %>]</strong><br>
+                      <p style="font-size:80%; color:gray;">조회수 : <%= View3[1] %><br><%= Date3[1] %></p>
+                    </a>
                     </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputName" class="col-sm-2 control-label">Name</label>
-
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputName" placeholder="Name">
+                    <div class="col-sm-3">
+                      <a href="/content/<%=Con3[2]%>" style="text-decoration:none ; color:#000000">
+                      <img class="img-responsive" src="<%=Img3[2]%>" alt="Photo" style="display: inline-block; margin-bottom:10px; height:130px; width: 300px; object-fit: fill;">
+                      <strong style="font-size:95%;">[<%= Title3[2] %>]</strong><br>
+                      <p style="font-size:80%; color:gray;">조회수 : <%= View3[2] %><br><%= Date3[2] %></p>
+                    </a>
                     </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputExperience" class="col-sm-2 control-label">Experience</label>
-
-                    <div class="col-sm-10">
-                      <textarea class="form-control" id="inputExperience" placeholder="Experience"></textarea>
+                    <div class="col-sm-3">
+                      <a href="/content/<%=Con3[3]%>" style="text-decoration:none ; color:#000000">
+                      <img class="img-responsive" src="<%=Img3[3]%>" alt="Photo" style="display: inline-block; margin-bottom:10px; height:130px; width: 300px; object-fit: fill;">
+                      <strong style="font-size:95%;">[<%= Title3[3] %>]</strong><br>
+                      <p style="font-size:80%; color:gray;">조회수 : <%= View3[3] %><br><%= Date3[3] %></p>
+                    </a>
                     </div>
+                    <!-- /.col -->
                   </div>
-                  <div class="form-group">
-                    <label for="inputSkills" class="col-sm-2 control-label">Skills</label>
-
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputSkills" placeholder="Skills">
+				  <div class="row margin-bottom">
+                    <div class="col-sm-3">
+                      <a href="/content/<%=Con3[4]%>" style="text-decoration:none ; color:#000000">
+                      <img class="img-responsive" src="<%=Img3[4]%>" alt="Photo" style="display: inline-block; margin-bottom:10px; height:130px; width: 300px; object-fit: fill;">
+                      <strong style="font-size:95%;">[<%= Title3[4] %>]</strong><br>
+                      <p style="font-size:80%; color:gray;">조회수 : <%= View3[4] %><br><%= Date3[4] %></p>
+                    </a>
                     </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox"> I agree to the <a href="#">terms and conditions</a>
-                        </label>
-                      </div>
+                    <div class="col-sm-3">
+                      <a href="/content/<%=Con3[5]%>" style="text-decoration:none ; color:#000000">
+                      <img class="img-responsive" src="<%=Img3[5]%>" alt="Photo" style="display: inline-block; margin-bottom:10px; height:130px; width: 300px; object-fit: fill;">
+                      <strong style="font-size:95%;">[<%= Title3[5] %>]</strong><br>
+                      <p style="font-size:80%; color:gray;">조회수 : <%= View3[5] %><br><%= Date3[5] %></p>
+                    </a>
                     </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                      <button type="submit" class="btn btn-danger">Submit</button>
+                    <div class="col-sm-3">
+                      <a href="/content/<%=Con3[6]%>" style="text-decoration:none ; color:#000000">
+                      <img class="img-responsive" src="<%=Img3[6]%>" alt="Photo" style="display: inline-block; margin-bottom:10px; height:130px; width: 300px; object-fit: fill;">
+                      <strong style="font-size:95%;">[<%= Title3[6] %>]</strong><br>
+                      <p style="font-size:80%; color:gray;">조회수 : <%= View3[6] %><br><%= Date3[6] %></p>
+                    </a>
                     </div>
+                    <div class="col-sm-3">
+                      <a href="/content/<%=Con3[7]%>" style="text-decoration:none ; color:#000000">
+                      <img class="img-responsive" src="<%=Img3[7]%>" alt="Photo" style="display: inline-block; margin-bottom:10px; height:130px; width: 300px; object-fit: fill;">
+                      <strong style="font-size:95%;">[<%= Title3[7] %>]</strong><br>
+                      <p style="font-size:80%; color:gray;">조회수 : <%= View3[7] %><br><%= Date3[7] %></p>
+                    </a>
+                    </div>
+                    <!-- /.col -->
                   </div>
-                </form>
+              </div>
+			  <div class="tab-pane" id="streaming">
+                <div class="row margin-bottom">
+                    <div class="col-sm-3">
+                      <a href="/content/<%=Con4[0]%>" style="text-decoration:none ; color:#000000">
+                      <img class="img-responsive" src="<%=Img4[0]%>" alt="Photo" style="display: inline-block; margin-bottom:10px; height:130px; width: 300px; object-fit: fill;">
+                      <strong style="font-size:95%;">[<%= Title4[0] %>]</strong><br>
+                      <p style="font-size:80%; color:gray;">조회수 : <%= View4[0] %><br><%= Date4[0] %></p>
+                    </a>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-sm-3">
+                      <a href="/content/<%=Con4[1]%>" style="text-decoration:none ; color:#000000">
+                      <img class="img-responsive" src="<%=Img4[1]%>" alt="Photo" style="display: inline-block; margin-bottom:10px; height:130px; width: 300px; object-fit: fill;">
+                      <strong style="font-size:95%;">[<%= Title4[1] %>]</strong><br>
+                      <p style="font-size:80%; color:gray;">조회수 : <%= View4[1] %><br><%= Date4[1] %></p>
+                    </a>
+                    </div>
+                    <div class="col-sm-3">
+                      <a href="/content/<%=Con4[2]%>" style="text-decoration:none ; color:#000000">
+                      <img class="img-responsive" src="<%=Img4[2]%>" alt="Photo" style="display: inline-block; margin-bottom:10px; height:130px; width: 300px; object-fit: fill;">
+                      <strong style="font-size:95%;">[<%= Title4[2] %>]</strong><br>
+                      <p style="font-size:80%; color:gray;">조회수 : <%= View4[2] %><br><%= Date4[2] %></p>
+                    </a>
+                    </div>
+                    <div class="col-sm-3">
+                      <a href="/content/<%=Con4[3]%>" style="text-decoration:none ; color:#000000">
+                      <img class="img-responsive" src="<%=Img4[3]%>" alt="Photo" style="display: inline-block; margin-bottom:10px; height:130px; width: 300px; object-fit: fill;">
+                      <strong style="font-size:95%;">[<%= Title4[3] %>]</strong><br>
+                      <p style="font-size:80%; color:gray;">조회수 : <%= View4[3] %><br><%= Date4[3] %></p>
+                    </a>
+                    </div>
+                    <!-- /.col -->
+                  </div>
+				  <div class="row margin-bottom">
+                    <div class="col-sm-3">
+                      <a href="/content/<%=Con4[4]%>" style="text-decoration:none ; color:#000000">
+                      <img class="img-responsive" src="<%=Img4[4]%>" alt="Photo" style="display: inline-block; margin-bottom:10px; height:130px; width: 300px; object-fit: fill;">
+                      <strong style="font-size:95%;">[<%= Title4[4] %>]</strong><br>
+                      <p style="font-size:80%; color:gray;">조회수 : <%= View4[4] %><br><%= Date4[4] %></p>
+                    </a>
+                    </div>
+                    <div class="col-sm-3">
+                      <a href="/content/<%=Con4[5]%>" style="text-decoration:none ; color:#000000">
+                      <img class="img-responsive" src="<%=Img4[5]%>" alt="Photo" style="display: inline-block; margin-bottom:10px; height:130px; width: 300px; object-fit: fill;">
+                      <strong style="font-size:95%;">[<%= Title4[5] %>]</strong><br>
+                      <p style="font-size:80%; color:gray;">조회수 : <%= View4[5] %><br><%= Date4[5] %></p>
+                    </a>
+                    </div>
+                    <div class="col-sm-3">
+                      <a href="/content/<%=Con4[6]%>" style="text-decoration:none ; color:#000000">
+                      <img class="img-responsive" src="<%=Img4[6]%>" alt="Photo" style="display: inline-block; margin-bottom:10px; height:130px; width: 300px; object-fit: fill;">
+                      <strong style="font-size:95%;">[<%= Title4[6] %>]</strong><br>
+                      <p style="font-size:80%; color:gray;">조회수 : <%= View4[6] %><br><%= Date4[6] %></p>
+                    </a>
+                    </div>
+                    <div class="col-sm-3">
+                      <a href="/content/<%=Con4[7]%>" style="text-decoration:none ; color:#000000">
+                      <img class="img-responsive" src="<%=Img4[7]%>" alt="Photo" style="display: inline-block; margin-bottom:10px; height:130px; width: 300px; object-fit: fill;">
+                      <strong style="font-size:95%;">[<%= Title4[7] %>]</strong><br>
+                      <p style="font-size:80%; color:gray;">조회수 : <%= View4[7] %><br><%= Date4[7] %></p>
+                    </a>
+                    </div>
+                    <!-- /.col -->
+                  </div>
               </div>
               <!-- /.tab-pane -->
             </div>
@@ -626,194 +671,7 @@
   </footer>
 
   <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Create the tabs -->
-    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-      <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-      <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
-    </ul>
-    <!-- Tab panes -->
-    <div class="tab-content">
-      <!-- Home tab content -->
-      <div class="tab-pane" id="control-sidebar-home-tab">
-        <h3 class="control-sidebar-heading">Recent Activity</h3>
-        <ul class="control-sidebar-menu">
-          <li>
-            <a href="javascript:void(0)">
-              <i class="menu-icon fa fa-birthday-cake bg-red"></i>
-
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-
-                <p>Will be 23 on April 24th</p>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <i class="menu-icon fa fa-user bg-yellow"></i>
-
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
-
-                <p>New phone +1(800)555-1234</p>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
-
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
-
-                <p>nora@example.com</p>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <i class="menu-icon fa fa-file-code-o bg-green"></i>
-
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
-
-                <p>Execution time 5 seconds</p>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <!-- /.control-sidebar-menu -->
-
-        <h3 class="control-sidebar-heading">Tasks Progress</h3>
-        <ul class="control-sidebar-menu">
-          <li>
-            <a href="javascript:void(0)">
-              <h4 class="control-sidebar-subheading">
-                Custom Template Design
-                <span class="label label-danger pull-right">70%</span>
-              </h4>
-
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <h4 class="control-sidebar-subheading">
-                Update Resume
-                <span class="label label-success pull-right">95%</span>
-              </h4>
-
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-success" style="width: 95%"></div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <h4 class="control-sidebar-subheading">
-                Laravel Integration
-                <span class="label label-warning pull-right">50%</span>
-              </h4>
-
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <h4 class="control-sidebar-subheading">
-                Back End Framework
-                <span class="label label-primary pull-right">68%</span>
-              </h4>
-
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <!-- /.control-sidebar-menu -->
-
-      </div>
-      <!-- /.tab-pane -->
-      <!-- Stats tab content -->
-      <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
-      <!-- /.tab-pane -->
-      <!-- Settings tab content -->
-      <div class="tab-pane" id="control-sidebar-settings-tab">
-        <form method="post">
-          <h3 class="control-sidebar-heading">General Settings</h3>
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Report panel usage
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-
-            <p>
-              Some information about this general settings option
-            </p>
-          </div>
-          <!-- /.form-group -->
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Allow mail redirect
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-
-            <p>
-              Other sets of options are available
-            </p>
-          </div>
-          <!-- /.form-group -->
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Expose author name in posts
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-
-            <p>
-              Allow the user to show his name in blog posts
-            </p>
-          </div>
-          <!-- /.form-group -->
-
-          <h3 class="control-sidebar-heading">Chat Settings</h3>
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Show me as online
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-          </div>
-          <!-- /.form-group -->
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Turn off notifications
-              <input type="checkbox" class="pull-right">
-            </label>
-          </div>
-          <!-- /.form-group -->
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Delete chat history
-              <a href="javascript:void(0)" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
-            </label>
-          </div>
-          <!-- /.form-group -->
-        </form>
-      </div>
-      <!-- /.tab-pane -->
-    </div>
-  </aside>
+ 
   <!-- /.control-sidebar -->
   <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
@@ -867,13 +725,13 @@ var serch_type="tag"
     			$('#search_btn').trigger('click');
     		}
     	});
-/*
+
       $("#follow_btn").click(function()
        {
        	 console.log("follow_btn clicked");
-         window.location.replace("/follow/1;");
+         window.location.replace("/follow/<%= Uid %>;");
        });
-*/
+
 });
 </script>
 <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
@@ -895,7 +753,70 @@ var serch_type="tag"
 
   firebase.initializeApp(config);
   firebaseEmailAuth = firebase.auth();
-
   userSessionCheck();
+
+  function userSessionCheck() {
+      firebaseEmailAuth.onAuthStateChanged(function (user) {
+          if (user) {
+              // var loginUserEmail = require("../sql/getUserInfo");
+              //firebaseDatabase.ref("users/" + user.uid).once('value').then(function (snapshot) {
+              //    loginUserName = snapshot.val().name;
+              loginUserName = user.uid;
+
+              $.ajax({
+                  data: { data: loginUserName },
+                  url: '/getLoginUser',
+                  type: "post",
+                  dataType: 'JSON',
+                  success: function (data) {//get User table from sql and save it in data
+
+                      user_info = data;
+                      document.getElementById("username").innerHTML = user_info.Nickname;
+                      document.getElementById("realusername").innerHTML = user_info.Nickname;
+                      document.getElementById("smallusername").innerHTML = user_info.Mail;
+                      document.getElementById("profile").href = "/profile/" + user_info.UID + ';';
+
+                      for (var i = 0; i < user_info.Length; i++) {
+                          var item = '<li><li><a href="/profile/' + user_info.Follower[i] + ';' + '"><i class="fa fa-circle-o text-blue"></i> <span>' + user_info.Fnick[i] + '</span></a></li></li>'
+                          //alert(item);
+                          $('#libr').append(item);
+
+                      }
+
+                  },
+                  error: function (textStatus) {
+                      console.log('error ' + textStatus);
+                  }
+              });
+
+              
+              return true
+
+          }
+          else {
+              $("#follow").empty();
+              document.getElementById("username").innerHTML = "Login";
+              $("#username").removeAttr('data-toggle');
+              $("#username").attr("href", "/login");
+              $("#username").removeAttr('data-widget');
+
+              //alert("pleaselogin");
+              return false
+          }
+      });
+  }
+   $(document).ready(function () {
+      $(document).on('click', '.SignOut', function () {
+          firebaseEmailAuth.signOut().then(function () {
+              alert("Log out! Good Bye!")
+              window.location.href = "/"
+         })
+        .catch(function (error) {
+            alert(error);
+        });
+
+      });
+  });
+    </script>
 </body>
 </html>

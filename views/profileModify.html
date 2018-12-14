@@ -291,7 +291,7 @@
                             </li>
                             <li>
                                 <a href="#product" data-toggle="tab">
-                                    동영상/문장 삭제
+                                    컨텐츠 확인/삭제
                                 </a>
                             </li>
                         </ul>
@@ -570,16 +570,16 @@
                         var title = myjson[i].Title;
                         var views = myjson[i].Views;
                         var pageUrl = myjson[i].Page_url;
-                        var item = '<div class="col-sm-6 col-md-3 col-lg-2" style="margin: 0px 0px 50px 0px;"><div class="thumbnail"><a href="' +
+                        var item = '<div id = "'+ cid[i] +'" class="col-sm-6 col-md-3 col-lg-2" style="margin: 0px 0px 50px 0px;"><div class="thumbnail"><a href="' +
                         pageUrl + '"><img src="' + views + '" alt="view"></a><div class="caption"><h3 style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + title + '</h3><p>Type:' + type +
-                        '</p> <p><button class="btn btn-danger deleteBtn" id = "'+cid[i]+'">Delete</button></p></div></div></div>';
+                        '</p> <p><button onclick="delete_info(this)" class="btn btn-danger deleteBtn">Delete</button></p></div></div></div>';
                         $('#product').append(item);
-                        alert(item);
+                       // alert(item);
                     }
 
                     cid_check = cid.join(",#");
                     cid_check = '#' + cid_check;
-                    alert("cidcheck is "+cid_check);
+                //    alert("cidcheck is "+cid_check);
                 },
                 error: function (textStatus) {
                     console.log('error ' + textStatus);
@@ -590,7 +590,36 @@
        
 
     });
+    function delete_info(obj) {
+        //alert("yeah");
+        var target = obj.parentNode.parentNode.parentNode.parentNode.getAttribute("id");
+        //alert("target = " + target);
+        var field = document.getElementById(target);
+       
 
+        document.getElementById("product").removeChild(field);
+       // alert("yeah");
+        var delete_cid = {delete_cid : target}
+        //$('#product *').remove();
+         $.ajax({
+             data: delete_cid,
+             url: '/profilemodify/delete',
+             type: "post",
+             dataType: 'JSON',
+             success: function (data) {
+
+                 var myjson = data;
+                 if (myjson.result == "Success")
+                     console.log("Delete Success");
+                 else
+                     console.log("Delete Fail");
+
+             },
+             error: function (textStatus) {
+                 console.log('error ' + textStatus);
+             }
+         });
+    }
 
 
 
@@ -633,30 +662,10 @@ var serch_type="tag"
     		}
 		});
 
-		$('#79').click(function () {
-		    alert("yeah");
-		    $.ajax({
-		        data: loginData,
-		        url: '/profilemodify/delete',
-		        type: "post",
-		        dataType: 'JSON',
-		        success: function (data) {
-
-
-		            var myjson = data;
-		            num = myjson.length;
-		            for (var i = 0; i < num; i++) {
-		                alert("yeah");
-
-		            }
-
-
-		        },
-		        error: function (textStatus) {
-		            console.log('error ' + textStatus);
-		        }
-		    });
-		});
+		/*$(document).on('click', '.deleteBtn', function () {
+		    delete_info($(this).id);
+		});*/
+		
 });
 </script>
 

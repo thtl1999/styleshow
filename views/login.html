@@ -56,151 +56,97 @@
 </head>
 
 <body class="hold-transition login-page">
+    <div class="login-box">
+        <div class="login-logo">
 
-<div class="login-box">
+            <a href="/"><b>Style</b>Show</a>
+        </div>
+        <!-- /.login-logo -->
+        <div class="login-box-body">
+            <p class="login-box-msg">Login</p>
 
-  <div class="login-logo">
- 
-    <a href="/"><b>Style</b>Show</a>
+            <!--form action="../../index2.html" method="post"-->
+            <form>
+                <div class="form-group has-feedback">
+                    <input type="email" class="form-control" placeholder="Email" id="email">
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <input type="password" class="form-control" placeholder="Password" id="pwd">
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                </div>
+                <div class="row">
+                    <div class="col-xs-8">
+                        <div class="checkbox icheck">
+                            <label>
+                                <input type="checkbox" id="remember" name="remember" value="remember"> Remember Me
 
-  </div>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-xs-4">
+                        <button type="button" class="btn btn-primary btn-block btn-flat login">Login</button>
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </form>
 
-  <!-- /.login-logo -->
+            <div class="social-auth-links text-center">
+                <button type="button" class="btn btn-primary btn-block google" style="color:#2A1B0A;background-color:#FFFFFF;border-color:#808080;"><img src="google.png" width="20px" height="20px" align="left"><strong>Google로 로그인</strong></button>
+                <button type="button" class="btn btn-primary btn-block facebook" style="background-color:#315794;border-color:#315794;"><img src="facebook.jpg" width="20px" height="20px" align="left"><strong>페이스북로 로그인</strong></button>
+                
+            </div>
+            <div class="modal fade" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
 
-  <div class="login-box-body">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">에러 메시지</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
 
-    <p class="login-box-msg">Login</p>
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            서비스를 준비중입니다.
+                        </div>
 
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">닫기</button>
+                        </div>
 
-    <!--form action="../../index2.html" method="post"-->
-     <form>
-
-      <div class="form-group has-feedback">
-
-        <input type="email" class="form-control" placeholder="Email" id="email" >
-
-        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-
-      </div>
-
-      <div class="form-group has-feedback">
-
-        <input type="password" class="form-control" placeholder="Password" id="pwd">
-
-        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-
-      </div>
-
-      <div class="row">
-
-        <div class="col-xs-8">
-
-          <div class="checkbox icheck">
-
-            <label>
-
-              <input type="checkbox"> Remember Me
-
-            </label>
-
-          </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.social-auth-links -->
+            <!-- <a href="#">Forgot Password?</a><br> -->
+            <a href="register.html" class="text-center">Register an Account</a>
 
         </div>
-
-        <!-- /.col -->
-
-        <div class="col-xs-4">
-
-          <button type="button" class="btn btn-primary btn-block btn-flat login">Login</button>
-
-        </div>
-
-        <!-- /.col -->
-
-      </div>
-
-    </form>
-
-
-    <div class="social-auth-links text-center">
-
-      <a class="btn btn-primary btn-block" style="background-color:#31B404;border-color:#31B404;" data-toggle="modal" data-target="#myModal"><img src="naver.ico" width="20px" height="20px" align="left"><strong>네이버로 로그인</strong></a>
-
-      <button type ="button" class="btn btn-primary btn-block facebook" style="background-color:#315794;border-color:#315794;" ><img src="facebook.jpg" width="20px" height="20px" align="left"><strong>페이스북로 로그인</strong></button>
-
-      <a class="btn btn-primary btn-block" style="color:#2A1B0A; background-color:#FFF319;border-color:#FFF319;" data-toggle="modal" data-target="#myModal"><img src="kakao.png" width="25px" height="21px" align="left"><strong>카카오톡으로 로그인</strong></a>
-
+        <!-- /.login-box-body -->
     </div>
-
-    <div class="modal fade" id="myModal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-      
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">에러 메시지</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        
-        <!-- Modal body -->
-        <div class="modal-body">
-          서비스를 준비중입니다.
-        </div>
-        
-        <!-- Modal footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">닫기</button>
-        </div>
-        
-      </div>
-    </div>
-  </div>
-
-    <!-- /.social-auth-links -->
-
-
-   <!-- <a href="#">Forgot Password?</a><br> -->
-
-    <a href="register.html" class="text-center">Register an Account</a>
-
-
-  </div>
-
-  <!-- /.login-box-body -->
-
-</div>
-
-<!-- /.login-box -->
-
-
-<!-- jQuery 3 -->
-
-<script src="bower_components/jquery/dist/jquery.min.js">
-</script>
-
-<!-- Bootstrap 3.3.7 -->
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js">
-</script>
-
-<!-- iCheck -->
-
-<script src="plugins/iCheck/icheck.min.js"></script>
-<script>
-
-  $(function () {
+    <!-- /.login-box -->
+    <!-- jQuery 3 -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- iCheck -->
+    <script src="plugins/iCheck/icheck.min.js"></script>
+    <script>$(function () {
     $('input').iCheck({
       checkboxClass: 'icheckbox_square-blue',
       radioClass: 'iradio_square-blue',
       increaseArea: '20%' /* optional */
     });
-  });
-
-</script>
-<!-- Firebase Script Start -->
-  <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
-  <script>
-    var firebaseEmailAuth; 
-    var firebaseDatabase; 
+  });</script>
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <!-- Firebase Script Start -->
+    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+    <script>
+    var firebaseEmailAuth;
+    var firebaseDatabase;
     var userInfo;
    // Initialize Firebase
   var config = {
@@ -212,27 +158,53 @@
     messagingSenderId: "332877089687"
   };
     firebase.initializeApp(config);
- 
-    firebaseEmailAuth = firebase.auth(); 
-    firebaseDatabase = firebase.database(); 
+
+    firebaseEmailAuth = firebase.auth();
+    firebaseDatabase = firebase.database();
     $(document).ready(function(){
       $(document).on('click','.login',function(){
         var email = $('#email').val();
         var password = $('#pwd').val();
+        if ($("input:checkbox[id='remember']").is(":checked") == true) {
+            firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+                .then(function () {
+
+                    console.log("Auth.set.cookie");
+                })
+                .catch(function (error) {
+                    // Handle Errors here.
+                    var errorCode = error.code;
+                    var errorMessage = error.message;
+                    console.log("Error in change Auth : " + errorCode + errorMessage);
+                });
+        }
+        else {
+            firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
+             .then(function () {
+
+                 console.log("Auth.set.Seesion");
+             })
+             .catch(function (error) {
+                 // Handle Errors here.
+                 var errorCode = error.code;
+                 var errorMessage = error.message;
+                 console.log("Error in change Auth : " + errorCode + errorMessage);
+             });
+        }
        // alert("Try Login with: " + email +":"+ password);
             firebaseEmailAuth.signInWithEmailAndPassword(email, password)
            .then(function(firebaseUser) {
                loginSuccess(firebaseUser);
- 
+
            })
           .catch(function(error) {
                alert(error);
           });
 
-    
+
       });
     });
-    
+
     $(document).ready(function () {
         $(document).on('click', '.facebook', function (err) {
              var providerID;
@@ -241,7 +213,7 @@
             var passwordTemp = "hidden";
             var facebookProvider;
              facebookProvider = new firebase.auth.FacebookAuthProvider();
-             
+
             firebase.auth().signInWithPopup(facebookProvider).then(function (result) {
                 var token = result.credential.accessToken;
                 var user = result.user;
@@ -254,15 +226,47 @@
                 post_to_url("/register/regist", { "UID":UID, "email": emailFromProvider, "pwd": passwordTemp, "name": nameFromProvider, "phone": providerID });
             }).catch(function (error) {
                 // Handle Errors here.
-                
+
                 alert(error.code);
                 alert(error.message);
-                
+
             });
             loginsucess(userInfo);
         });
 
     });
+    $(document).ready(function () {
+        $(document).on('click', '.google', function (err) {
+            var providerID;
+            var nameFromProvider;
+            var emailFromProvider;
+            var passwordTemp = "hidden";
+            var googleProvider;
+            googleProvider = new firebase.auth.GoogleAuthProvider();
+
+
+            firebase.auth().signInWithPopup(googleProvider).then(function (result) {
+                var token = result.credential.accessToken;
+                var user = result.user;
+                user.providerData.forEach(function (profile) {
+                    providerID = profile.providerId;
+                    nameFromProvider = profile.displayName;
+                    emailFromProvider = profile.email;
+                });
+                var UID = user.uid;
+                post_to_url("/register/regist", { "UID": UID, "email": emailFromProvider, "pwd": passwordTemp, "name": nameFromProvider, "phone": providerID });
+            }).catch(function (error) {
+                // Handle Errors here.
+
+                alert(error.code);
+                alert(error.message);
+
+            });
+            loginsucess(userInfo);
+        });
+
+    });
+    
     function loginSuccess(firebaseUser){
        alert("Welcome " +  $('#email').val());
     window.location.href = "/"
@@ -270,26 +274,26 @@
 
     function post_to_url(path, params) {
         var method =  "post"; // set method as post
- 
-    
+
+
         var form = document.createElement("form");
         form.setAttribute("method", method);
         form.setAttribute("action", path);
- 
+
         for(var key in params) {
             var hiddenField = document.createElement("input");
             hiddenField.setAttribute("type", "hidden");
             hiddenField.setAttribute("name", key);
             hiddenField.setAttribute("value", params[key]);
- 
+
             form.appendChild(hiddenField);
         }
- 
+
         document.body.appendChild(form);
         form.submit();
     }
 
     </script>
- </body>
+</body>
 
 </html>
